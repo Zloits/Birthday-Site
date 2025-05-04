@@ -16,7 +16,7 @@ function handleChest() {
         document.body.style.background = "black";
 
         setTimeout(() => {
-            window.location.href = "/scrapbook/index.html"
+            window.location.href = "/Birthday-Site//scrapbook/index.html"
         }, 2000);
     }, 500);
 }
