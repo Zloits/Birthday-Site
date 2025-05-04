@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.surface {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#00A9FF, #89CFF3, #A0E9FF, #CDF5FD);
+    height: 80vh;
+}
+.surface span {
+    font-size: 3vh;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.sea {
+    height: 300vh;
+    background: linear-gradient(#3ABEF9, #3572EF, #050C9C);
+}
+.sea svg {
+    position: absolute;
+    margin-top: -200px;
+    transform: rotate(180deg);
+    color: #3abcf9b7;
+}
+.chests {
+    z-index: 2;
+    left: 40%;
+    top: 95%;
+    position: relative;
+    width: 218px;
+    height: 218px;
+    transition: 8s linear;
+}
+.chests img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s;
+}
+.opened {
+    opacity: 0;
+    left: 7%;
+}
+
+.bottom {
+    height: 20vh;
+    background: linear-gradient(#F6DCAC, #FEAE6F);
+}
+.bottom svg {
+    position: absolute;
+    margin-top: -90px;
+}
+
+.scrapbook .book {
+    position: relative;
+    width: 350px;
+    height: 600px;
+    transition: transform 0.5s;
+}
+
+.scrapbook .paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.scrapbook .paper img {
+    width: 100%;
+    height: 100%;
+}
+
+.scrapbook .front,
+.scrapbook .back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.scrapbook .front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
+}
+
+.scrapbook .back {
+    z-index: 0;
+}
+
+.scrapbook .front-content,
+.scrapbook .back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scrapbook .back-content {
+    transform: rotateY(180deg);
+}
+
+/* Paper flip effect */
+.scrapbook .flipped .front,
+.scrapbook .flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+.scrapbook button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.5s;
+}
+
+.scrapbook button:focus {
+    outline: none;
+}
+
+.scrapbook button:hover i {
+    color: #636363;
+}
+
+.scrapbook i {
+    font-size: 20px;
+    color: gray;
+}
+
+/* Paper stack order */
+.scrapbook #p1 {
+    z-index: 3;
+}
+
+.scrapbook #p2 {
+    z-index: 2;
+}
+
+.scrapbook #p3 {
+    z-index: 1;
+}

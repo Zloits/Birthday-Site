@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Dive</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { height: 100%; overflow-x: hidden; font-family: sans-serif; }
+
+    .section {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .surface {
+      background: linear-gradient(to bottom, #3ABEF9 70%, #aef 100%);
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .underwater {
+      background: linear-gradient(to bottom, #3ABEF9, #014f86);
+      color: white;
+    }
+
+    .treasure {
+      background-color: #012c47;
+      color: white;
+    }
+
+    .island {
+      background: linear-gradient(to bottom, #fef3c7, #3ABEF9);
+    }
+
+    .scrapbook {
+      background: #fff;
+      padding: 2rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .btn {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: white;
+      color: #3ABEF9;
+      border: none;
+      border-radius: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="section surface">
+    <h1>Tap to Dive!</h1>
+    <svg class="wave" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#3ABEF9" fill-opacity="1" d="M0,192L60,186.7C120,181,240,171,360,160C480,149,600,139,720,154.7C840,171,960,213,1080,202.7C1200,192,1320,128,1380,96L1440,64L1440,0L0,0Z"></path>
+    </svg>
+  </div>
+
+  <div class="section underwater">
+    <h2>You found a treasure!</h2>
+    <button class="btn" onclick="scrollToSection('treasure')">Open Chest</button>
+  </div>
+
+  <div class="section treasure" id="treasure">
+    <h2>There’s a letter and a key inside...</h2>
+    <button class="btn" onclick="scrollToSection('island')">Go back up</button>
+  </div>
+
+  <div class="section island">
+    <h2>Welcome to the Birthday Island!</h2>
+    <button class="btn" onclick="scrollToSection('scrapbook')">Open Scrapbook</button>
+  </div>
+
+  <div class="section scrapbook" id="scrapbook">
+    <h3>Memories & Notes</h3>
+    <p>Insert photos, quotes, birthday wishes, anything you want here.</p>
+  </div>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

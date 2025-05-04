@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chest Click</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .chests {
+      position: relative;
+      width: 512px; /* or match your image size */
+      height: 512px;
+    }
+    .chests img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.3s;
+    }
+    .opened {
+        opacity: 0;
+        left: 7%;
+    }
+  </style>
+</head>
+<body>
+  <div id="chests" class="chests" onclick="openChest()">
+    <img id="closedChest" src="/sources/chest_closed.png" alt="Closed Chest">
+    <img id="openedChest" src="/sources/chest_opened.png" alt="Opened Chest" class="opened">
+  </div>
+
+  <script>
+    function openChest() {
+      document.getElementById("closedChest").style.opacity = 0;
+      document.getElementById("openedChest").style.opacity = 1;
+    }
+  </script>
+</body>
+</html>
